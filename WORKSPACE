@@ -1,5 +1,14 @@
 workspace(name = "org_tensorflow")
 
+local_repository(
+  # Name of the Abseil repository. This name is defined within Abseil's
+  # WORKSPACE file, in its `workspace()` metadata
+  name = "com_google_absl",
+
+  # NOTE: Bazel paths must be absolute paths. E.g., you can't use ~/Source
+  path = "/home/robertas/projects/tensorflow/abseil-cpp",
+)
+
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive", "http_file")
 
 http_archive(
@@ -76,6 +85,12 @@ http_file(
 # `git_repository` rules above, the following call will skip redefining them.
 load("@build_bazel_rules_swift//swift:repositories.bzl", "swift_rules_dependencies")
 swift_rules_dependencies()
+
+http_archive(
+    name = "com_googlesource_code_re2",
+    type = "zip",
+    urls = ["https://github.com/google/re2/archive/2019-06-01.zip"],
+) # https://github.com/google/re2
 
 # We must check the bazel version before trying to parse any other BUILD
 # files, in case the parsing of those build files depends on the bazel

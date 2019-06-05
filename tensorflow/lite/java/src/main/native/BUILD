@@ -34,6 +34,8 @@ cc_library(
         "//tensorflow/lite:string_util",
         "//tensorflow/lite/c:c_api_internal",
         "//tensorflow/lite/java/jni",
+        "@com_google_absl//absl/strings",
+        "@com_googlesource_code_re2//:re2",
     ],
     alwayslink = 1,
 )
