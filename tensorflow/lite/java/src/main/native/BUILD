@@ -19,6 +19,9 @@ cc_library(
     ],
     hdrs = [
         "jni_utils.h",
+        "normalize.h",
+        "predict.h",
+        "extract_feature.h",
     ],
     copts = tflite_copts(),
     linkopts = [

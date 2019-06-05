@@ -14,6 +14,9 @@ limitations under the License.
 ==============================================================================*/
 
 #include "tensorflow/lite/kernels/register.h"
+#include "tensorflow/lite/java/src/main/native/normalize.h"
+#include "tensorflow/lite/java/src/main/native/predict.h"
+#include "tensorflow/lite/java/src/main/native/extract_feature.h"
 
 namespace tflite {
 
